@@ -19,10 +19,10 @@ func main() {
     }
 
     var link = ""
-    var fromDelimiterStart = "[<"
-    var fromDelimiterEnd = ">]"
-    var toDelimiterStart = "[>"
-    var toDelimiterEnd = "<]"
+    var linkFromStart = "[<"
+    var linkFromEnd = ">]"
+    var linkToStart = "[>"
+    var linkToEnd = "<]"
 
     if len(os.Args) != 2 {
         fmt.Println("ERROR (no arguments provided): You should provide either `from` or `to` argument to this command!")
@@ -31,9 +31,9 @@ func main() {
     var argument = os.Args[1]
 
     if argument == "from" {
-        link = fromDelimiterStart + code + fromDelimiterEnd
+        link = linkFromStart + code + linkFromEnd
     } else if argument == "to" {
-        link = toDelimiterStart + code + toDelimiterEnd
+        link = linkToStart + code + linkToEnd
     } else {
         fmt.Println("ERROR (wrong argument): You should provide either `from` or `to` argument to this command!")
         return
